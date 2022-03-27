@@ -1,0 +1,60 @@
+.user {
+  gap: 15px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  -webkit-box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  -moz-box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+}
+
+.user .myinput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.user .myinput .myinputtext {
+  width: 70%;
+  outline: none;
+  border: none;
+  border: 1px solid #818181;
+  border-radius: 3px;
+  height: 90px;
+  font-weight: bold;
+}
+
+.user .myinput .currentbutton,
+.user .myinput .currentreplybutton,
+.user .myinput .currenteditbutton {
+  padding: 10px 20px;
+  background-color: #5457b6;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+.user .myinput .currentbutton:hover,
+.user .myinput .currentreplybutton:hover,
+.user .myinput .currenteditbutton:hover {
+  background-color: white;
+  color: #5457b6;
+  border: 1px solid #5457b6;
+  font-weight: bold;
+}
+
+.current {
+  padding: 15px 0;
+}
+/*# sourceMappingURL=current-user.component.css.map */

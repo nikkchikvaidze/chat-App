@@ -1,0 +1,12 @@
+<form class="user current">
+    <div class="userui">
+        <div class="avatar myinput">
+            <img *ngIf="current" class="useravatar" src={{current.image.png}} alt="" />
+            <textarea name="textinput" class="myinputtext" placeholder="Add a comment..." cols="80" rows="3"
+                [(ngModel)]="content"></textarea>
+            <button *ngIf="!reply && !edit" type="submit" class="currentbutton" (click)="sendComment()">SEND</button>
+            <button *ngIf="reply" type="submit" class="currentreplybutton">REPLY</button>
+            <button *ngIf="edit" type="submit" class="currenteditbutton">EDIT</button>
+        </div>
+    </div>
+</form>

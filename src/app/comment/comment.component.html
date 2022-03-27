@@ -1,0 +1,69 @@
+<section *ngFor="let member of user">
+    <div class="comment">
+        <div class="scores">
+            <button (click)="commentPlusBtn(member)">+</button>
+            <p class="score">{{member.score}}</p>
+            <button (click)="commentMinusBtn(member)">-</button>
+        </div>
+        <div class="user">
+            <div class="user__info">
+                <div class="user__info--general">
+                    <img class="user__img" src={{member.user.image.png}} />
+                    <p class="user__username">{{member.user.username}}</p>
+                    <p class="user__date">{{member.createdAt}}</p>
+                </div>
+                <button *ngIf="member.user.username !== currentUser?.username" class="user__reply"
+                    (click)="replyUserComment(member)"><i class="fa fa-reply"></i>Reply</button>
+                <ng-container *ngIf="member.user.username === currentUser?.username">
+                    <button class="user__delete" (click)="deleteUserComment(member)"><i
+                            class="fa fa-trash"></i>Delete</button>
+                    <button *ngIf="!editComment" class="user__edit" (click)="editUserComment()">Edit</button>
+                    <button *ngIf="editComment" class="user__edit" (click)="updateUserComment()">Update</button>
+                </ng-container>
+            </div>
+            <div class="user-text" *ngIf="!editComment">
+                <p>{{member.content}}</p>
+            </div>
+            <div *ngIf="editComment && member.user.username === currentUser?.username" class="edit__text">
+                <textarea name="" id="" cols="80" rows="3" [(ngModel)]="member.content"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="member.replies.length">
+        <section *ngFor="let reply of member.replies let i = index">
+            <div class="comment comment__reply">
+                <div class="scores">
+                    <button (click)="replyPlusBtn(reply)">+</button>
+                    <p class="score">{{reply.score}}</p>
+                    <button (click)="replyMinusBtn(reply)">-</button>
+                </div>
+                <div class="user">
+                    <div class="user__info">
+                        <div class="user__info--general">
+                            <img class="user__img" src={{reply.user.image.png}} />
+                            <p class="user__username">{{reply.user.username}}</p>
+                            <p class="user__date">{{reply.createdAt}}</p>
+                        </div>
+
+                        <button *ngIf="reply.user.username !== currentUser?.username" class="user__reply"><i
+                                class="fa fa-reply"></i>Reply</button>
+                        <ng-container *ngIf="reply.user.username === currentUser?.username">
+                            <button class="user__delete" (click)="deleteUserReply(reply)"><i
+                                    class="fa fa-trash"></i>Delete</button>
+                            <button *ngIf="!editReply" class="user__edit" (click)="editUserReply()">Edit</button>
+                            <button *ngIf="editReply" class="user__edit" (click)="updateUserReply()">Update</button>
+                        </ng-container>
+                    </div>
+                    <div *ngIf="!editReply" class=" user-text">
+                        <p>{{reply.content}}</p>
+                    </div>
+                    <div *ngIf="editReply && reply.user.username === currentUser?.username" class="edit__text">
+                        <textarea name="" id="" cols="80" rows="3" [(ngModel)]="reply.content"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,53 @@
+.user {
+  gap: 15px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  -webkit-box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  -moz-box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  //   background-color: black;
+
+  .myinput {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    .myinputtext {
+      width: 70%;
+      outline: none;
+      border: none;
+      border: 1px solid rgb(129, 129, 129);
+      border-radius: 3px;
+      height: 90px;
+      font-weight: bold;
+    }
+
+    .currentbutton,
+    .currentreplybutton,
+    .currenteditbutton {
+      padding: 10px 20px;
+      background-color: hsl(238, 40%, 52%);
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: 15px;
+    }
+    .currentbutton:hover,
+    .currentreplybutton:hover,
+    .currenteditbutton:hover {
+      background-color: white;
+      color: hsl(238, 40%, 52%);
+      border: 1px solid #5457b6;
+      font-weight: bold;
+    }
+  }
+}
+
+.current {
+  padding: 15px 0;
+}

@@ -1,0 +1,103 @@
+.comment {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  -webkit-box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+  -moz-box-shadow: -2px 7px 12px 0px rgba(179, 168, 168, 0.75);
+
+  i {
+    margin-right: 5px;
+  }
+
+  .scores {
+    background-color: rgb(238, 236, 236);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: column;
+    color: hsl(238, 40%, 52%);
+    font-size: 14px;
+    font-weight: bold;
+
+    button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 15px;
+    width: 90%;
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &--general {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 35%;
+
+        .user__username {
+          color: black;
+          font-size: 13px;
+          font-weight: bold;
+        }
+
+        .user__date {
+          font-size: 10px;
+        }
+
+        img {
+          width: 40px;
+        }
+      }
+
+      .user__reply,
+      .user__delete,
+      .user__edit {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: hsl(238, 40%, 52%);
+        font-weight: bold;
+      }
+
+      .user__delete {
+        color: tomato;
+        margin-left: 200px;
+      }
+    }
+    .user-text {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+.comment__reply {
+  width: 90%;
+  margin-left: 70px;
+}
